@@ -1,0 +1,22 @@
+<% if @photo.errors.present? %>
+	<p><span class="errors"> We have errors!</span>
+	<%= @photo.errors.full_messages.join("<br>").html_safe%>
+	</p>
+<% end %>
+<%= form_for @photo do |f| %>
+	
+	<%= f.label :title%>
+	<%= f.text_field :title%>
+
+	<%= f.label :date%>
+	<%= f.text_field :date%>
+
+	<%= f.label :description%>
+	<%= f.text_field :description%>
+
+	<%= f.label :file_location%>
+	<%= f.text_field :file_location%>
+
+	<%= f.submit "Update"%>
+
+<% end %>
